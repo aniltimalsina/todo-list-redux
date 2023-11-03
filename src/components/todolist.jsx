@@ -1,10 +1,22 @@
+import { useDispatch, useSelector } from "react-redux";
+import { deleteTodo } from "../redux/todoSlice";
+import { editTodo } from "../redux/todoSlice";
+
 function TodoList() {
-  const todos = [
-    { id: 1, title: "Todo 1", isCompleted: false },
-    { id: 2, title: "Todo 2", isCompleted: false },
-    { id: 3, title: "Todo 3", isCompleted: true },
-    { id: 4, title: "Todo 4", isCompleted: false },
-  ];
+  const todos = useSelector((state) => state.todos);
+  const dispatch = useDispatch();
+
+  const handleDelete = (id) => {
+    dispatch(deleteTodo({ id }));
+  };
+
+  const handleEdit = (id) => {
+    const newTitle = prompt("Enter new title");
+    if (newTitle !== null) {
+      dispatch(editTodo({ id, title: newTitle }));
+    }
+  };
+
   return (
     <div>
       <ul>
@@ -12,8 +24,8 @@ function TodoList() {
           return (
             <li key={todo.id}>
               {todo.title}
-              <button>Edit</button>
-              <button>Delete</button>
+              <button onClick={() => handleEdit(todo.id)}>Edit</button>
+              <button onClick={() => handleDelete(todo.id)}>Delete</button>
             </li>
           );
         })}
