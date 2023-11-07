@@ -15,7 +15,7 @@ const todoSlice = createSlice({
                 title: action.payload.title,
                 isCompleted: false,
             };
-            state.push(todo);
+            state.unshift(todo);
         },
         deleteTodo: (state, action) => {
             return state.filter((todo) =>

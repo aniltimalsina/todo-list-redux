@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-left: 200px;
+}
+
+input {
+  width: 50%;
+  padding: 10px;
+  margin: 20px;
+  box-shadow: 2px 2px rgb(39, 81, 95);
+}
+
+li {
+  list-style-type: none;
+  border: 2px solid rgb(39, 81, 95);
+  padding: 10px;
+  margin: 5px;
+}
+.edit,
+.delete {
+  float: right;
+  margin-left: 10px;
+}
+
+.lists {
+  width: 50%;
+}
+
+form {
+  width: 75%;
+  position: relative;
+  left: 70px;
+}
+
+button {
+  background-color: #c2fbd7;
+  border-radius: 50px;
+  border-width: 0;
+  box-shadow: rgba(25, 25, 25, 0.04), rgba(0, 0, 0, 0.1);
+  color: #008000;
+}

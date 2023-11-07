@@ -1,5 +1,6 @@
 import AddTodoForm from "./components/addtodoform";
 import TodoList from "./components/todolist";
+import "./todo.css";
 
 function App() {
   return (

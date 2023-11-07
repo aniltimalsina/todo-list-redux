@@ -19,13 +19,17 @@ function TodoList() {
 
   return (
     <div>
-      <ul>
+      <ul className="lists">
         {todos.map((todo) => {
           return (
             <li key={todo.id}>
               {todo.title}
-              <button onClick={() => handleEdit(todo.id)}>Edit</button>
-              <button onClick={() => handleDelete(todo.id)}>Delete</button>
+              <button className="edit" onClick={() => handleEdit(todo.id)}>
+                Edit
+              </button>
+              <button className="delete" onClick={() => handleDelete(todo.id)}>
+                Delete
+              </button>
             </li>
           );
         })}
